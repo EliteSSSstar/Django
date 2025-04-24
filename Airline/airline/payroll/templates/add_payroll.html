@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+// User payroll template
+{% load static %}
+
+{% block title %}
+{% block content %}
+<h2>Add Payroll Entry</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

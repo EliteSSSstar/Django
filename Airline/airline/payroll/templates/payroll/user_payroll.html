@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+// User Payroll Template
+
+{% block content %}
+<h2>Your Payroll</h2>
+<table>
+    <thead>
+    <tr>
+        // Header row
+        <th>Month</th>
+        <th>Salary Paid</th>
+        <th>Deductions</th>
+        <th>Net Salary</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for payroll in payrolls %}
+    <tr>
+        // Data rows
+        <td>{{ payroll.month }}</td>
+        <td>{{ payroll.salary_paid }}</td>
+        <td>{{ payroll.deductions }}</td>
+        <td>{{ payroll.net_salary }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">No payroll records found.</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %} // End of content block

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Payroll List</h2>
+<table>
+    <thead>
+    <tr>
+        <!-- Header for payroll detail -->
+        <th>Employee</th>
+        <th>Month</th>
+        <th>Salary Paid</th>
+        <th>Deductions</th>
+        <th>Net Salary</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for payroll in payrolls %}
+    <tr>
+        <!-- detail for each record payroll -->
+        <td>{{ payroll.employee.user.username }}</td>
+        <td>{{ payroll.month }}</td>
+        <td>{{ payroll.salary_paid }}</td>
+        <td>{{ payroll.deductions }}</td>
+        <td>{{ payroll.net_salary }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5">No payroll records found.</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
