@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-ss$@e=_61vs6*sdc@n1lg$#3o35hnag%qpqe^z=te6c_#4i3n(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['airlinepayrolls.frb.io', 'localhost', '127.0.0.1'] # Add your domain or IP address here 
+
 
 
 # Application definition
